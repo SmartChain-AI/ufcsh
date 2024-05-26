@@ -6,18 +6,18 @@ jobs:
   refresh-feed:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout 🛎️
+      - name: Checkout
         uses: actions/checkout@v2
         with:
           persist-credentials: false
 
-      - name: Fetch API Data 📦
+      - name: Fetch API Data
         uses: JamesIves/fetch-api-data-action@v2
         with:
           endpoint: https://market-api.ufcstrike.com/sets/375/circulation
           configuration: '{ "method": "GET" }'
 
-      - name: Build and Deploy 🚀
+      - name: Build and Deploy
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           branch: main # Pushes the updates to the main branch.
