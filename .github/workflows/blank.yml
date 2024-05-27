@@ -2,23 +2,27 @@ name: Refresh Feed
 on:
   schedule:
     - cron: 15 */2 * * *
-
 permissions:
   contents: write
 jobs:
   build-and-deploy:
     concurrency: ci-${{ github.ref }} # Recommended if you intend to make multiple deployments in quick succession.
     runs-on: ubuntu-latest
-    steps:
-      - name: Checkout 🛎️
-        uses: actions/checkout@v4
+     steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          persist-credentials: false
 
-      - name: Install and Build 🔧 # This example project is built using npm and outputs the result to the 'build' folder. Replace with the commands required to build your project, or remove this step entirely if your site is pre-built.
-        run: |
-          npm ci
-          npm run build
+      - name: Fetch API Data
+        uses: JamesIves/fetch-api-data-action@v2
+        with:
+          endpoint: https://market-api.ufcstrike.com/sets/375/circulation
+          configuration: '{ "method": "GET" }'
 
-      - name: Deploy 🚀
+      - name: Build and Deploy
         uses: JamesIves/github-pages-deploy-action@v4
         with:
-          folder: build # The folder the action should deploy.
+          branch: main # Pushes the updates to the main branch.
+          folder: fetch-api-data-action # The location of the data.json file saved by the Fetch API Data action.
+          target-folder: data # Saves the data into the 'data' directory on the main branch.
