@@ -1,7 +1,7 @@
 name: Refresh Feed
 on:
   schedule:
-    - cron: 10 */4 * * *
+    - cron: 45 */1 * * *
 permissions:
   contents: write
 jobs:
