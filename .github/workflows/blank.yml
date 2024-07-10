@@ -18,6 +18,7 @@ jobs:
         with:
           endpoint: https://market-api.ufcstrike.com/sets/375/circulation
           configuration: '{ "method": "GET" }'
+          set-output: false
 
       - name: Build and Deploy
         uses: JamesIves/github-pages-deploy-action@v4
