@@ -16,7 +16,7 @@ jobs:
       - name: Fetch API Data
         uses: SmartChain-AI/fetch-api-data-action@v2.0.0
         with:
-          endpoint: https://market-api.ufcstrike.com/sets/376/circulation
+          endpoint: https://web-api.cryptoslam.io/v1/sales/ufcnft/summary?groupingtype=daily
           configuration: '{ "method": "GET" }'
 
       - name: Build and Deploy
