@@ -1,7 +1,7 @@
 name: Refresh Feed
 on:
   schedule:
-    - cron: 15 */1 * * *
+    - cron: 30 */1 * * *
 permissions:
   contents: write
 jobs:
@@ -14,7 +14,7 @@ jobs:
           persist-credentials: false
 
       - name: Fetch API Data
-        uses: SmartChain-AI/fetch-api-data-action@v2
+        uses: JamesIves/fetch-api-data-action@v2
         with:
           endpoint: https://web-api.cryptoslam.io/v1/sales/ufcnft/summary?groupingtype=daily
           configuration: '{ "method": "GET" }'
