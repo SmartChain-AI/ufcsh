@@ -8,6 +8,11 @@ jobs:
   refresh-feed:
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          persist-credentials: false
+          
       - name: Fetch API Data
         uses: JamesIves/fetch-api-data-action@v2
         with:
