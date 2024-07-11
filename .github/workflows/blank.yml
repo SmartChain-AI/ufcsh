@@ -16,7 +16,7 @@ jobs:
       - name: Fetch API Data
         uses: JamesIves/fetch-api-data-action@v2
         with:
-          endpoint: https://web-api.cryptoslam.io/v1/sales/ufcnft/summary?groupingtype=daily
+          endpoint: https://web-api.cryptoslam.io/v1/collections/ufcnft/header-stats?timeInterval=1
           configuration: '{ "method": "GET" }'
           save-location: data
           save-name: test
