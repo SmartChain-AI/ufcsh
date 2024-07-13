@@ -1,7 +1,7 @@
 name: Refresh Feed
 on:
   schedule:
-    - cron: 0 */4 * * *
+    - cron: 0 */2 * * *
 permissions:
   contents: write
 jobs:
@@ -19,7 +19,7 @@ jobs:
           endpoint: https://web-api.cryptoslam.io/v1/collections/ufcnft/top-sales?limit=10&timeInterval=7
           configuration: '{ "method": "GET" }'
           save-location: data
-          save-name: topsales7days
+          save-name: topsalessevendays
           set-output: false
           
       - name: Build and Deploy
