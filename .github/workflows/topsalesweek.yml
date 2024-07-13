@@ -19,7 +19,7 @@ jobs:
           endpoint: https://web-api.cryptoslam.io/v1/collections/ufcnft/top-sales?limit=10&timeInterval=7
           configuration: '{ "method": "GET" }'
           save-location: data
-          save-name: topsalessevendays
+          save-name: topsalesweek
           set-output: false
           
       - name: Build and Deploy
