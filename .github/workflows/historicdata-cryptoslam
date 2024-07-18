@@ -1,4 +1,4 @@
-name: Historic Data
+name: Historic Data Monthly
 on:
   schedule:
     - cron: 0 */2 * * *
@@ -16,10 +16,10 @@ jobs:
       - name: Fetch API Data
         uses: JamesIves/fetch-api-data-action@v2
         with:
-          endpoint: https://web-api.cryptoslam.io/v1/collections/ufcnft/top-sales?limit=10&timeInterval=7
+          endpoint: https://web-api.cryptoslam.io/v1/sales/ufcnft/summary?groupingtype=monthly
           configuration: '{ "method": "GET" }'
           save-location: data
-          save-name: topsalesweek
+          save-name: historicdatamonthly
           set-output: false
           
       - name: Build and Deploy
