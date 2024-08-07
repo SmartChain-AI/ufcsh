@@ -19,7 +19,7 @@ jobs:
           endpoint: https://web-api.cryptoslam.io/v1/collections/ufcnft/header-stats?timeInterval=7
           configuration: '{ "method": "GET" }'
           save-location: data
-          save-name: statsday
+          save-name: statsweek
           set-output: false
           
       - name: Build and Deploy
