@@ -1,4 +1,4 @@
-name: Stats Day
+name: Stats Week
 on:
   schedule:
     - cron: 0 */4 * * *
