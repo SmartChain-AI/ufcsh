@@ -1,7 +1,7 @@
 name: Historic Data Monthly
 on:
   schedule:
-    - cron: 0/15 * * * *
+    - cron: 1 */12 * * *
 permissions:
   contents: write
 jobs:
