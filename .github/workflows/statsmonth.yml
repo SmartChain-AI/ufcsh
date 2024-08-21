@@ -16,7 +16,7 @@ jobs:
       - name: Fetch API Data
         uses: JamesIves/fetch-api-data-action@v2
         with:
-          endpoint: https://web-api.cryptoslam.io/v1/collections/ufcnft/header-stats?timeInterval=7
+          endpoint: https://web-api.cryptoslam.io/v1/collections/ufcnft/header-stats?timeInterval=30
           configuration: '{ "method": "GET" }'
           save-location: data
           save-name: statsmonth
