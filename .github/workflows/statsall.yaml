@@ -1,7 +1,7 @@
 name: Stats All
 on:
   schedule:
-    - cron: 0 */6 * * *
+    - cron: 0/15 * * * *
 permissions:
   contents: write
 jobs:
@@ -16,7 +16,7 @@ jobs:
       - name: Fetch API Data
         uses: JamesIves/fetch-api-data-action@v2
         with:
-          endpoint: https://web-api.cryptoslam.io/v1/collections/ufcnft/header-stats?timeInterval=1
+          endpoint: https://web-api.cryptoslam.io/v1/collections/ufcnft/header-stats?timeInterval=0
           configuration: '{ "method": "GET" }'
           save-location: data
           save-name: statsall
