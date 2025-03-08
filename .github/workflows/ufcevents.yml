@@ -1,7 +1,7 @@
 name: UFC Events
 on:
   schedule:
-    - cron: 15 * * * *
+    - cron: 0 0 * * THU
 permissions:
   contents: write
 jobs:
