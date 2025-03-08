@@ -1,0 +1,30 @@
+name: UFC Events
+on:
+  schedule:
+    - cron: 0 0 * * *
+permissions:
+  contents: write
+jobs:
+  refresh-feed:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          persist-credentials: false
+          
+      - name: Fetch API Data
+        uses: JamesIves/fetch-api-data-action@v2
+        with:
+          endpoint: https://site.web.api.espn.com/apis/personalized/v2/scoreboard/header?sport=mma&league=ufc
+          configuration: '{ "method": "GET" }'
+          save-location: data
+          save-name: ufcevents
+          set-output: false
+          
+      - name: Build and Deploy
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          branch: main # Pushes the updates to the main branch.
+          folder: data # The location of the data.json file saved by the Fetch API Data action.
+          target-folder: data # Saves the data into the 'data' directory
